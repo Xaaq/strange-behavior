@@ -40,7 +40,7 @@ export default function Activities() {
 
 export const axiosMock = new MockAdapter(axios)
 
-test("pressing activity remove button removes activity", async () => {
+test("pressing button", async () => {
     // given
     axiosMock.onGet(`http://localhost:8000/activity`).reply(200, {name: "first name"})
 
