@@ -49,6 +49,7 @@ test("pressing button", async () => {
     await waitFor(() => expect(screen.getByText(/data name: first name/i)).toBeInTheDocument())
 
     // when
+    // this mock is here to make sure SWR won't be able to fetch data - instead, we will depend on the effect of using `mutate` function
     axiosMock.onGet(`http://localhost:8000/activity`).reply(500, {})
     await user.click(screen.getByRole("button", {name: /change activity name/i}))
 
